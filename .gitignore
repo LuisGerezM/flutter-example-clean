@@ -4,7 +4,7 @@ analysis_options.yaml
 pubspec.lock
 web/
 windows/
-
+lib/presentation/bloc/gifts_list/RESOURCES.txt
 
 # Miscellaneous
 *.class

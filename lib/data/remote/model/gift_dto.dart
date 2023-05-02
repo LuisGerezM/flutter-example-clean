@@ -1,12 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-// este part lo escribo yo
 part 'gift_dto.g.dart';
 
-// para convertir json a obj y de obj a json, dependiendo lo que necesitemos
-// fromJson -->> json a obj
-// toJson -->> obj a json
 @JsonSerializable()
 class GiftDto extends Equatable {
   final String title;

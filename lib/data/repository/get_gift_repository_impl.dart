@@ -7,15 +7,11 @@ import 'package:consumiendo_apis/domain/repository/gifts_repository.dart';
 import 'package:injectable/injectable.dart';
 import 'package:dartz/dartz.dart';
 
-// el gifts_repository de domain
 @Injectable(as: GiftsRepository)
 class GiftsRepositoryImpl extends GiftsRepository {
-  // final GetGiftLocalSource; // por ahora no tngo
-  //GetGiftRemoteSource --> remote/repository
   final GiftRemoteSource _getGiftsRemoteSource;
   String? apiKey;
 
-// las {} eran para los que son opcionales... apiKey NO es opcional, pero en este caso lo definimos asi, y con cuerpo el constructor, ya que queremos INYECTARLA, ...{@Named('apiKey') String? apiKey}) { this.apiKey = apiKey; }
   GiftsRepositoryImpl(this._getGiftsRemoteSource,
       {@Named('apiKey') String? apiKey}) {
     this.apiKey = apiKey;
@@ -23,9 +19,7 @@ class GiftsRepositoryImpl extends GiftsRepository {
 
   @override
   Future<Either<DomainException, List<GiftModel>>> fetchGifts() async {
-    // TODO: implement fetchGifts
     try {
-      // despues agregar la parte de LOCAL
       final result = await _getGiftsRemoteSource.getGifts();
       return await result.when(success: (data) async {
         final mappedList = data.map((e) => e.toDomainModel()).toList();

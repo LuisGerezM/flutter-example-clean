@@ -14,7 +14,6 @@ class GiftRemoteSource {
 
   Future<ApiResult<List<GiftDto>>> getGifts() async {
     try {
-      // este 'apiKey' ESTA SIENDO INYECTADO, lo tenemos en .env, y lo inyectamos desde core/di/network_module.dart linea 31
       final response = await service.fetch(apiKey);
       return ApiResult.success(data: response.data);
     } on DioError catch (e) {

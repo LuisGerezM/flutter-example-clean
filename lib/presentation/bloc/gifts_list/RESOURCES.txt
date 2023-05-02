@@ -1,2 +1,0 @@
-bloc --> está relacionado con los casos de uso
-voy a tener 1 bloc por cada caso de uso ?

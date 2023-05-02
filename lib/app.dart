@@ -11,7 +11,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // buscar sobre MultiBlocProvider
     return MultiBlocProvider(
       providers: [
         BlocProvider<GiftsListBloc>(
