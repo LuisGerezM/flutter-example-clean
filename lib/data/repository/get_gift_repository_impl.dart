@@ -26,10 +26,10 @@ class GiftsRepositoryImpl extends GiftsRepository {
     // TODO: implement fetchGifts
     try {
       // despues agregar la parte de LOCAL
-      final getApiResult = await _getGiftsRemoteSource.getGifts();
-      return await getApiResult.when(success: (data) async {
-        final getListEntity = data.map((e) => e.toDomainModel()).toList();
-        return Right(getListEntity);
+      final result = await _getGiftsRemoteSource.getGifts();
+      return await result.when(success: (data) async {
+        final mappedList = data.map((e) => e.toDomainModel()).toList();
+        return Right(mappedList);
       }, failure: (error) {
         throw error;
       });
