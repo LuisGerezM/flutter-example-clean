@@ -1,5 +1,10 @@
 *.env
 Resources.txt
+analysis_options.yaml
+pubspec.lock
+web/
+windows/
+
 
 # Miscellaneous
 *.class
